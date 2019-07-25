@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic</title>
+</head>
+
+<body>
+    <h1>Hello JavaScript</h1>
+
+    <div id="info">my words</div>
+    <table class="my-table" border="1">
+        <tr>
+            <td class="my">1</td>
+            <td>2</td>
+            <td id="my-id">3</td>
+        </tr>
+        <tr>
+            <td class="my">4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    <table class="my-table" border="1">
+        <tr>
+            <td class="my">11</td>
+            <td>12</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td class="my">14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+    </table>
+
+    <script>
+
+        let table2 = document.querySelectorAll('.my-table')[1]; // 2nd table
+
+        table2.querySelector('.my').innerHTML = '<h2>Hello</h2>';
+
+
+        let my_el = document.querySelector('#my-id');
+        my_el.closest('.my-table').style.fontSize = '30px';
+        my_el.closest('tr').style.backgroundColor = 'blue';
+
+    </script>
+</body>
+
+</html>
