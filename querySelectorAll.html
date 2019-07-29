@@ -49,6 +49,11 @@
         my_el.closest('.my-table').style.fontSize = '30px';
         my_el.closest('tr').style.backgroundColor = 'blue';
 
+        let x;
+        for(x=0; x<10; x++){
+            let y = x;
+            setTimeout(()=> console.log("y: ", y), 1000);
+        }
     </script>
 </body>
 

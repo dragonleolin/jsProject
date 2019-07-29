@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String</title>
+    <style>
+            .red{
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="my_out"></div>
+
+
+    <script>
+        let my_out = document.querySelector('#my_out');
+        let str = "中職中信明星賽27、28日在新莊球場開打，中信兄弟隊40歲老將彭政閔生涯第19次出賽";
+
+        function showLine(s) {
+            my_out.innerHTML += s + '<br>';
+            // my_out.innerHTML = my_out.innerHTML + s + '<br>';
+        }
+        showLine(str.charAt(2));
+        showLine(str[2]);
+        showLine(str.charCodeAt(2));
+        showLine(str.length);
+        showLine(str.indexOf('明星'));
+        showLine(str.indexOf('明星', 5)); // 找不到會得到 -1
+        showLine(str.indexOf('中職')); //ans: 0
+        showLine(str.lastIndexOf('中職')); //從後面找回來，ans: 0
+        showLine('中信 indexOf: ' + str.indexOf('中信')); //ans: 2
+        showLine('中信 indexOf, 5: ' + str.indexOf('中信', 5)); //從第五個開始找，ans: 21
+        showLine('中信 lastIndexOf: ' + str.lastIndexOf('中信')+'<br>'); //ans: 21
+
+        showLine(str.slice(2, 6));
+        showLine(str.slice()); // 從頭到尾
+        showLine(str.slice(38));
+        showLine(str.split('中信').join('')); // 刪除
+        showLine(str.split('中信').join('<span class="red">桃猿</span>'));// 取代
+
+
+    </script>
+</body>
+
+</html>
