@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object</title>
+</head>
+<body>
+    <div id="rect"></div>
+
+    <script>
+        let rect =document.querySelector('#rect');
+        let ar = [];
+
+        for(let i=1;i<10;i++){
+            ar.push(i);
+        }
+
+        rect.innerHTML = JSON.stringify(ar) + '<br>';
+        rect.innerHTML+= ar.pop()  + '<br>';
+        rect.innerHTML += JSON.stringify(ar) + '<br>';
+        rect.innerHTML += ar.shift() + '<br>';
+        rect.innerHTML += JSON.stringify(ar) + '<br>';
+        rect.innerHTML += ar.unshift(7, 9) + '<br>'; // 回傳 length
+        rect.innerHTML += JSON.stringify(ar) + '<br>'
+        rect.innerHTML += ar.push(11,12) + '<br>'; // 回傳 length
+        rect.innerHTML += JSON.stringify(ar) + '<br>'
+    </script>
+</body>
+</html>

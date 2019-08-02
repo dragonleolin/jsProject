@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object</title>
+</head>
+<body>
+    <div id="rect"></div>
+
+    <script>
+        let rect =document.querySelector('#rect');
+        let s;
+        const person = {
+        name: 'david',
+        age: 30,
+        gender: 'male'
+    };
+
+   const ar =[2,5,7,8];
+   console.log('age' in person);//是不是物件屬性名稱
+   console.log('sex' in person);
+
+   console.log('ar instanceof Array:', ar instanceof Array);//測試某物件是不是屬於某類型
+   console.log('ar instanceof Object:', ar instanceof Object);
+   console.log('person instanceof Array:', person instanceof Array);//測試某物件是不是屬於某類型
+   console.log('person instanceof Object:', person instanceof Object);
+
+   for(let i=1;i<10;i++){
+       console.log(i, ar.indexOf(i)); //陣列裡有沒有某元素
+   }
+    </script>
+</body>
+</html>

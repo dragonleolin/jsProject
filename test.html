@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+    <div id="rect"></div>
+
+    <script>
+        // var ar = [];
+        // let i = 20;
+
+        // while(i--){
+        //     ar.push(i)
+        //     console.log(ar);
+        // }
+
+        var x = 0;
+var y = 0;
+while(x < 10){
+   while(y < 10){
+      console.log(y);
+      y++;
+   }
+  y = 0;
+  x++;
+}
+
+        // const roles = new Set();
+        // roles.add("User");
+        // roles.add("Admin");
+        // console.log(roles.size);
+
+        // const naught= new WeakSet();
+
+        // const children = [
+        //     {name: "Suzy"},
+        //     {name: "Derek"},
+        // ];
+
+        // naught.add(children[1]);
+        // console.log(naught);
+
+        // for(let child of children){
+        //     if(naught.has(child))
+        //     console.log(`Coal for ${child.name}!`);
+        //     else 
+        //     console.log(`Presents for ${child.name}!`);
+        // }
+
+        
+        // const u1= {name: 'Cynthia'};
+        // const u2= {name: 'James'};
+        // const u3= {name: 'Olive'};
+        // const u4= {name: 'Nana'};
+
+        // const userRoles = new Map();
+
+        // userRoles.set(u1, 'user');
+        // userRoles.set(u2, 'user');
+        // userRoles.set(u3, 'Admin');
+
+        // console.log(userRoles.get(u3));
+
+        // userRoles.has(u1);
+        // userRoles.get(u1);
+        // userRoles.has(u4);
+        // userRoles.get(u4);
+        // console.log(userRoles.has(u4));
+
+        
+        // userRoles.get(u1);
+        // userRoles.set(u1, 'Admin');
+        // userRoles.get(u1);
+        // console.log(userRoles.size);
+        // userRoles.size;
+
+        // for (let u of userRoles.keys())
+        //     console.log(u.name);
+        // for (let r of userRoles.values())
+        //     console.log(r);
+        // for (let ur of userRoles.entries())
+        //     console.log(`${ur[0].name}: ${ur[1]}`);
+        // for(let [u,r] of userRoles.entries())
+        //     console.log(`${u.name}: ${r} `);
+        // for(let [u,r] of userRoles)
+        //     console.log(`${u.name}: ${r}`);
+
+
+
+
+
+
+        // const rect = document.querySelector('#rect');
+
+        // class Super{
+        //     constructor(){
+        //         this.name = 'Super';
+        //         this.isSuper = true;
+        //     }
+        // }
+
+        // Super.prototype.sneaky = 'not recommended!';
+
+        // class Sub extends Super{
+        //     constructor(){
+        //         super();
+        //         this.name ='sub';
+        //         this.isSub = true;
+        //     }
+        // }
+
+        // const obj = new Sub();
+
+        // for( let p in obj){
+        //     console.log(`${p}: ${obj[p]}`+ 
+        //     (obj.hasOwnProperty(p) ? '': '(inherited)'));            
+        // }
+
+
+
+
+        // let s;
+        // const person = {
+        //     name: 'luke',
+        //     age: 31,
+        //     gender: 'male'
+        // }
+
+        // for(s in person){
+        //     rect.innerHTML += `${s} : ${person[s]}<br>`
+        // }
+
+
+        // class Car{
+        //     constructor(make, model){
+        //         this.make = make;
+        //         this.model =model;
+        //         this._userGears = ['P', 'N', 'R', 'D'];
+        //         this._userGear = this._userGears[0];
+        //     }
+
+        //     get userGear(){ return this._userGears[0]};
+        //     set userGear(value){
+        //         if(this._userGears.indexOf(value) < 0)
+        //         throw new Error(`Invalid gear: ${gear}`);
+        //          this.userGear = gear;
+        //     }
+
+        //     shift(gear){
+        //          this._userGear = gear;
+        //     }
+
+
+        // }
+
+        // // const car1 = new Car();
+        // // const car2 = new Car();
+
+        // const car1 = new Car("Tesla", "model s");
+        // const car2 = new Car("Mazda", "3i");
+
+        // car1.shift('D');
+        // car2.shift('R');
+
+        // console.log("car1: " + car1.userGear);
+        // console.log("car2: " + car2.userGear);
+
+    //     class Vehicle{
+    //         constructor(){
+    //             this.passengers = [];
+    //             console.log("Vehicle created ");
+    //         }
+    //         addPassenger(p){
+    //             this.passengers.push(p);
+    //         }
+    //     }
+
+    //     class Car extends Vehicle{
+    //         constructor(){
+    //             super();
+    //             console.log("Car created ");
+    //         }
+    //         deployAirbags(){
+    //             console.log("BWOOSH! ");
+    //         }
+    //     }
+
+
+    //     const v = new Vehicle();
+    //     v.addPassenger('Frank');
+    //     v.addPassenger('Iris');
+    //     v.passengers;
+    //     console.log(v);
+
+    //     const c = new Car();
+    //     c.addPassenger("Jack");
+    //     c.addPassenger("Nana");
+    //     c.passengers;
+    //     // v.deployAirbags();
+    //     c.deployAirbags();
+
+
+    //     class Motorcycle extends Vehicle{};
+    //     // const c= new Car();
+    //     const m = new Motorcycle();
+    //    console.log( c instanceof Car);
+    //    console.log( m instanceof Vehicle);
+    //    console.log( m instanceof Car);
+    //    console.log( m instanceof Vehicle);
+        
+    
+    </script>
+</body>
+</html>

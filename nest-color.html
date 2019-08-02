@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nest-color</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #c0e8ff;
+        }
+
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid gray;
+            background-color: red;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect">
+        <!--    <div class="ball">88</div>-->
+    </div>
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let b, i, k, n = 1;
+        
+
+        function plug(hex){
+            let a = 16,
+            if(hex < a.toString(16)){
+                return "0" + parseInt(hex);
+            }else if( hex == 17){
+                return hex;
+            }else{
+                return hex;
+            }
+        }
+
+        for (k = 0; k < 16; k++) {
+
+            for (i = 0; i < 16; i++ , n++) {
+                b = document.createElement('div');
+                b.className = 'ball';
+                b.innerHTML += '#'+ plug((i*17).toString(16)) + plug((k*17).toString(16)) + "00";
+                b.style.left = i * 70 + 'px';
+                b.style.top = k * 60 + 'px';
+                b.style.backgroundColor = `rgb(${i * 17}, ${k * 17},0)`;
+                rect.appendChild(b);
+            }
+        }
+
+
+
+
+        // for (i = 0; i < 10; i++) {
+        //     if (i === 7) {
+        //         break; // 離開迴圈
+        //     }
+        //     console.log(i);
+        // }
+        // console.log('-------');
+        // for (i = 0; i < 10; i++) {
+        //     if (i === 7) {
+        //         continue; // 進入下一輪
+        //     }
+        //     console.log(i);
+        // }
+
+
+    </script>
+</body>
+
+</html>

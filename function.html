@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+    <div id="rect"></div>
 
     <script>
         // function f(x) {
@@ -52,7 +52,54 @@
         // o.bark();
 
 
+        let a = 11;
+        var b = 22;
 
+        function fn(n) {
+            // let a = 1;
+            // var b = 2;
+            return a + b + n;
+        }
+
+        console.log(fn(7));
+
+        function myFunc(x, y){
+            console.log('x=' + x);
+            console.log('y=' + y);
+            console.log('arguments=' + arguments);
+            console.log(JSON.stringify(arguments));
+        }
+        
+        myFunc(7,9,12);
+
+        function myFunc(x, ...y){
+            // console.log('x=' + x);
+            // console.log('y=' + y);
+            y.forEach(function(v){
+                x +=v;
+            })
+            return x;
+        }
+        
+        myFunc(7,9,12);
+
+
+        function colorCode(r=0,g=0,b=0){
+            let c = r*256*256 + g*256 + b;
+            c= c.toString(16);
+            return '#'+ '000000'.slice(c.length)+c;
+        }
+        console.log(colorCode(0,255));
+
+        function sum(...n){
+            let s=0;
+            n.forEach(function(v){
+                s+=v;
+            })
+            return s;
+        }
+        
+        console.log(sum(3,6,8,9));
     </script>
 </body>
 

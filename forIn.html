@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>ForIn</title>
 </head>
+
 <body>
     <script>
         // const player = {name: 'Tomas', rank: 'Midshipman', age: 25};
@@ -21,9 +23,36 @@
         // for (let i=0; i<hand.length; i++)
         // console.log(`Roll ${i+1}: ${hand[i]}`);
 
+        // let user = {
+        //     name : 'luke',
+        //     age : 31
+        // }
+
+        // function greet() {
+        //     console.log(`hello ${user.name}`);
+        // }
+
+        // function getBirthYear() {
+        //     return new Date().getFullYear() - user.age;
+        // }
+        // greet();
+        // console.log(getBirthYear());
+
+    //     const cart = [
+    //         { name: "Widget", price: 9.95 },
+    //         { name: "Gadget", price: 22.95 },
+    //     ];
+    // const names =cart.map(x=>console.log(x.name));
+    // const price =cart.map(x=>console.log(x.price));
+
+    const fruits = ["apple", "cherry", "banana"];
+    const prices = [30, 200, 25.5];
+    const cart= fruits.map((x,i) => ({name: x, price: prices[i]}));
+    console.log(cart);
 
 
 
     </script>
 </body>
+
 </html>

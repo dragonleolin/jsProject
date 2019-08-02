@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>createElement</title>
+</head>
+<body>
+    <div id="my_out"></div>
+
+
+    
+    <script>
+        let my_out = document.querySelector('#my_out');
+        let el = document.createElement('div');
+        el.innerHTML = `<h2>hello</h2>`;
+        my_out.appendChild(el);
+    </script>
+</body>
+</html>
