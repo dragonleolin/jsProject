@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generator</title>
+</head>
+<body>
+    <script>
+        function* rainbow(){
+        yield 'red';
+        yield 'orange';
+        yield 'yellow';
+        yield 'green';
+        yield 'blue';
+        yield 'indigo';
+        yield 'violet';
+        
+    }
+
+    // const it = rainbow()
+    // console.log(it.next());
+    // console.log(it.next());
+    // console.log(it.next());
+    // console.log(it.next());
+    // console.log(it.next());
+    // console.log(it.next());
+    // console.log(it.next());
+
+    for(let color of rainbow()){
+        console.log(color);
+    }
+
+    //產生器一開始處於暫停狀態，迭代器已被回傳
+    function* interrogate(){                                    //let it = interrogate();
+        const name = yield "What is your name";                 //it.next();
+        const color = yield "What is your favorite color?";
+        return `${name}'s favorite color is ${color}`;
+    }
+    const it = interrogate();
+    //傳入"Ethan" : 傳回字串，產生器暫停
+    console.log(it.next('Ethan'));  
+    //傳入"orange" : 傳回字串，產生器暫停        
+    console.log(it.next('orange'));
+
+    //箭頭標記法不能用來建立產生器，必須使用function*
+
+
+    </script>
+
+</body>
+</html>

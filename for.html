@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // for(let temp, i=0, j=1; j<30;temp=i, i=j, j=i+temp)
+        // console.log(j);
+        // for(;;) console.log("I will repeat forever!"); //無窮迴圈
+
+        // for(let x=0.2; x<3.0; x+= 0.2)
+        // console.log(x);
+
+        const SYM = Symbol();
+        const o = { a: 1, b: 2, c:3, [SYM]: 4};
+
+        Object.keys(o).forEach(prop => console.log(`${prop}: ${o[prop]}`));
+
+        // for(let prop in o){
+        //     if(!o.hasOwnProperty(prop)) continue;
+        //     console.log(`${prop}: ${o[prop]}`);
+        // }
+
+
+
+    </script>
+</body>
+</html>
