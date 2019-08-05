@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pipeline</title>
+</head>
+<body>
+    <script>
+        const sin = Math.sin;
+        const cos = Math.cos;
+        const theta = Math.PI/4;
+        const zoom = 2;
+        const offset = [1, -3];
+
+        const pipeline = [
+            function rotate(p){
+                return{
+                    x: p.x * cos(theta) - p.y * sin(theta),
+                    y: p.x * sin(theta) + p.y * cos(theta),
+                };
+            } ,
+            function scale(p){
+                return { x:p.x + offset[0], y: p.y + offset[1]};
+            },
+             ];
+
+            const p = {x :1, y:1};
+            let p2 =p;
+            for(let i=0; i<pipeline.length; i++){
+                p2 = pipeline[i](p2);
+                console.log("p2 = " + p2);
+            }
+
+    function sum(arr, f){
+        //如果不提供函式可以使用一個null函式
+        //他只會回傳為修改的引數
+        if(typeof f != 'function') f = x => x;
+         return arr.reduce((a,x) => a += f(x),0);
+    }
+
+    console.log("sum([1,2,3]) =" +sum([1,2,3]));
+    console.log("sum([1,2,3], x=> x*x) :" +sum([1,2,3], x=> x*x));
+    console.log("sum([1,2,3], x=> Math.pow(x,3)): " +sum([1,2,3], x=> Math.pow(x,3)));
+
+    // function sumOfSquares(arr){
+    //     return sum(arr, x=>x*x);
+    // }
+
+    function newSummer(f){
+        // console.log('hi');
+        return arr=> sum(arr,f);
+    }
+
+    const sumOfSquares = newSummer(x=> x*x);
+    const sumOfCubes = newSummer(x => Math.pow(x,3));
+    console.log("sumOfSquares:" + sumOfSquares([1,2,3]));
+    console.log("sumOfCubes:" + sumOfCubes([1,2,3]));
+
+    </script>
+</body>
+</html>
