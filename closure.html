@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closure</title>
+    <script src="lib/lodash.js"></script>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+    <script>
+        'use strict';
+        let rect = document.querySelector('#rect');
+
+        const f = (()=> {
+            let n = 3;
+            return (a, b) =>{
+                n--;
+                if (n >= 0)
+                    return a * b;
+                else
+                    return '--------'
+            }
+        })();
+
+        rect.innerHTML += f(2, 3) + '<br>';
+        rect.innerHTML += f(4, 5) + '<br>';
+        rect.innerHTML += f(6, 7) + '<br>';
+        rect.innerHTML += f(8, 9) + '<br>';
+
+        const func =(function(){
+            let n =5;
+            return  (a=1)=>{
+                if(n){
+                    n--;
+                    return n*a;
+                }else{
+                    return '----------------';
+                }
+            }
+        }());
+        rect.innerHTML += func() + '<br>';
+        rect.innerHTML += func(8) + '<br>';
+        rect.innerHTML += func(8) + '<br>';
+        rect.innerHTML += func(8) + '<br>';
+        rect.innerHTML += func(8) + '<br>';
+        rect.innerHTML += func(8) + '<br>';
+
+    </script>
+</body>
+
+</html>

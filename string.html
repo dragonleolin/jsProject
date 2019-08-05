@@ -26,21 +26,21 @@
             my_out.innerHTML += s + '<br>';
             // my_out.innerHTML = my_out.innerHTML + s + '<br>';
         }
-        showLine(str.charAt(2));
-        showLine(str[2]);
-        showLine(str.charCodeAt(2));
-        showLine(str.length);
-        showLine(str.indexOf('明星'));
+        showLine(str.charAt(2)); //取回某位置的字元
+        showLine(str[2]); 
+        showLine(str.charCodeAt(2)); //取得某位置字元的字碼 Ans: 20013
+        showLine(str.length); //取得字串長度
+        showLine(str.indexOf('明星')); //子字串出現的位置
         showLine(str.indexOf('明星', 5)); // 找不到會得到 -1
         showLine(str.indexOf('中職')); //ans: 0
-        showLine(str.lastIndexOf('中職')); //從後面找回來，ans: 0
-        showLine('中信 indexOf: ' + str.indexOf('中信')); //ans: 2
-        showLine('中信 indexOf, 5: ' + str.indexOf('中信', 5)); //從第五個開始找，ans: 21
-        showLine('中信 lastIndexOf: ' + str.lastIndexOf('中信')+'<br>'); //ans: 21
+        showLine(str.lastIndexOf('中職')); //從後面找回來，Ans: 0
+        showLine('中信 indexOf: ' + str.indexOf('中信')); //Ans: 2
+        showLine('中信 indexOf, 5: ' + str.indexOf('中信', 5)); //從第五個開始找，Ans: 21
+        showLine('中信 lastIndexOf: ' + str.lastIndexOf('中信')+'<br>'); //Ans: 21
 
-        showLine(str.slice(2, 6));
+        showLine(str.slice(2, 6)); //從索引2到索引6(不包含6)建立一個新字串回傳 Ans: 中信明星
         showLine(str.slice()); // 從頭到尾
-        showLine(str.slice(38));
+        showLine(str.slice(37)); //19次出賽
         showLine(str.split('中信').join('')); // 刪除
         showLine(str.split('中信').join('<span class="red">桃猿</span>'));// 取代
 

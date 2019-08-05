@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function-call</title>
+</head>
+<body>
+        <div id="rect"></div>
+
+        <script>
+            'use strict';
+            let rect = document.querySelector('#rect');
+        
+            const a = function() {
+                rect.innerHTML += 'a begin<br>';
+                b();
+                rect.innerHTML += 'a end<br>';
+            };
+        
+            const b = function() {
+                rect.innerHTML += 'b begin<br>';
+                c();
+                rect.innerHTML += 'b end<br>';
+            };
+        
+            const c = function() {
+                rect.innerHTML += 'c begin<br>';
+                // ....
+                rect.innerHTML += 'c end<br>';
+            };
+        
+            a();
+        
+            // 遞迴
+            const m = function(n){
+                if(n<=1)
+                    return 1;
+                else
+                    return n*m(n-1);
+                    //5*4*3*2*1
+            };
+        
+            rect.innerHTML += m(5);
+        </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function-vars</title>
+</head>
+
+<body>
+        <div id="rect"></div>
+        <button onclick="myClick()">click me</button>
+    <script>
+        'use strict';
+        let rect = document.querySelector('#rect');
+        var a;
+        const myClick = function () {
+            // alert('Hello~' + a); //若外層有全域變數能抓的到
+        };
+
+
+        myClick();
+
+        // let a; //區域內抓不到let的值
+
+
+        const func = function(name="lulu", age=25) {
+            // return  {name: name, age: age,}
+            return {name, age};
+        }
+
+        console.log(func('John', 30));
+        console.log(func('sun'));
+
+
+    </script>
+</body>
+
+</html>
