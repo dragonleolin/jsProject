@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addEventListener</title>
+</head>
+<body>
+        <div id="rect"></div>
+        <button id="btn1">click me 1</button><br>
+        <button id="btn2">click me 2</button><br>
+        <button id="btn3">click me 3</button><br>
+        
+        <script>
+            'use strict';
+            let rect = document.querySelector('#rect');
+            // let btns = document.querySelectorAll('button');
+            let i;
+        
+            const handler1 = function(event){
+                console.log('hello~');
+                console.log(event.currentTarget.id);
+            };
+            const handler2 = function(event){
+                console.log('hi~');
+            };
+        
+            btn1.addEventListener('click', handler1);
+            btn2.addEventListener('click', handler1);
+        
+            btn3.addEventListener('click', handler1);
+            btn3.addEventListener('click', handler2);
+        
+        
+        
+        </script>
+
+</body>
+</html>

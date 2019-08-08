@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clock-second</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: #b0e9ff;
+        }
+        
+
+        .hand {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+        .middle{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 50%;
+            left: -10px;
+            top: -10px;
+            z-index: 2;
+        }
+        .hand-sec {
+            position: absolute;
+            width: 2px;
+            height: 280px;
+            background-color: #000;
+            left: -1px;
+            top: -280px;
+        }
+        .hand-min {
+            position: absolute;
+            width: 10px;
+            height: 220px;
+            background-color: #06660b;
+            left: -5px;
+            top: -215px;
+            border-radius: 5px;
+        }
+        .hand-hr {
+            position: absolute;
+            width: 16px;
+            height: 160px;
+            background-color: #0f0f97;
+            left: -8px;
+            top: -152px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+            <div class="hand ">
+                    <div class="middle"></div>
+                </div>
+        <div class="hand hr-hand">
+            <div class="hand-hr"></div>
+        </div>
+        <div class="hand min-hand">
+            <div class="hand-min"></div>
+        </div>
+        <div class="hand sec-hand">
+            <div class="hand-sec"></div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+        const sec_hand = document.querySelector('.sec-hand');
+        const min_hand = document.querySelector('.min-hand');
+        const hr_hand = document.querySelector('.hr-hand');
+
+        const doRun = () => {
+            let now = new Date();
+
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+            let ms = now.getMilliseconds();
+
+            hr_hand.style.transform = `rotate(${h*30 + .5*m}deg)`;
+            min_hand.style.transform = `rotate(${m*6}deg)`;
+            sec_hand.style.transform = `rotate(${s*6 + ms*0.006}deg)`;
+            setTimeout(doRun, 30);  //每30毫秒更新一次
+        };
+
+        doRun();
+
+    </script>
+</body>
+
+</html>

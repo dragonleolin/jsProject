@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>circle-menu</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #c0e8ff;
+        }
+
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid gray;
+            background-color: red;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        .big-ball {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #000000;
+            background-color: #5543ff;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            left: 370px;
+            top: 270px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect">
+        <div class="big-ball"></div>
+    </div>
+
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let bb = document.querySelector('.big-ball');
+        let b, i, x, y;
+        let ballNum = 12; //圓形數量
+        let unitAng = Math.PI * 2 / ballNum; //單位角度
+        let ballData = [];
+        let menuIsOpened = false;
+
+        for (i = 0; i < ballNum; i++) {
+            b = document.createElement('div');
+            b.className = "ball";
+            b.innerHTML = i + 1;
+            x = 380 + Math.floor(Math.cos(unitAng * i) * 250); //時鐘鐘面數字
+            y = 280 + Math.floor(Math.sin(unitAng * i) * 250); //時鐘鐘面數字
+            b.style.left = '380px';
+            b.style.top = '280px';
+
+            rect.appendChild(b);
+
+            ballData.push({
+                target: b,
+                closed: {x: 380, y:280},
+                opened : {x:x, y:y}
+            })
+        };
+
+        rect.appendChild(bb);
+
+        bb.onclick = function () {
+            menuIsOpened = ! menuIsOpened;
+            console.log(menuIsOpened);
+            let s = menuIsOpened ? 'opened' : 'closed';
+            
+            ballData.forEach(function(obj, ind){
+                setTimeout(function(){
+                    let x, y;
+                    b = obj.target;
+                    b.style.left = obj[s].x + 'px';
+                    b.style.top = obj[s].y + 'px';
+                },100*ind)
+            });
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+    <script>
+        'use strict';
+        let rect = document.querySelector('#rect');
+
+        //跑一次
+        // setTimeout(function(){
+        //     rect.innerHTML += '1<br>';
+        // }, 1000);
+
+        // setTimeout(function(){
+        //     rect.innerHTML += '2<br>';
+        // }, 2000);
+
+        // rect.innerHTML += '3<br>';
+        
+
+        //從0跑到9
+        for (let i = 0; i < 10; i++) {  //使用let控制變數，使每一輪執行都有獨立的變數
+            setTimeout(function () {
+                rect.innerHTML += i + '<br>'
+            }, 1000 * i)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

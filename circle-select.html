@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>circle-select</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #c0e8ff;
+        }
+
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid gray;
+            background-color: red;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .big-ball {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #000000;
+            background-color: #5543ff;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            left: 370px;
+            top: 270px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect">
+        <div class="big-ball"></div>
+    </div>
+
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let bb = document.querySelector('.big-ball');
+        let b, i, x, y, balls = [];
+        let ballNum = 12; //圓形數量
+        let unitAng = Math.PI * 2 / ballNum; //單位角度
+        let bPos = [];
+
+        for (i = 0; i < ballNum; i++) {
+            b = document.createElement('div');
+            b.className = "ball";
+            b.innerHTML = i + 1;
+            x = 380 + Math.floor(Math.cos(unitAng * i) * 250); //時鐘鐘面數字
+            y = 280 + Math.floor(Math.sin(unitAng * i) * 250); //時鐘鐘面數字
+            bPos.push({ x: x, y: y })
+            b.style.left = '380px';
+            b.style.top = '280px';
+
+            rect.appendChild(b);
+            balls.push(b);
+        };
+
+        rect.appendChild(bb);
+
+        bb.onclick = function () {
+            for (let i = 0; i < ballNum; i++) {
+                setTimeout(function () {
+                    b = balls[i];
+                    b.style.left = bPos[i].x + 'px';
+                    b.style.top = bPos[i].y + 'px';
+                }, 100 * i)
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

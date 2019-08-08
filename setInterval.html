@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout</title>
+</head>
+
+<body>
+    <div id="rect"></div>
+
+    <script>
+        'use strict';
+        let rect = document.querySelector('#rect');
+
+        //每隔一段時間跑數字1
+        // setInterval(function(){
+        //     rect.innerHTML += '1<br>';
+        // }, 1000);
+        // rect.innerHTML += '3<br>';
+
+        /*----------------------------------------------*/
+        //每隔一段時間換數字
+        // let myCount = 0;
+
+        // setInterval(function () {
+        //     myCount++;
+        //     rect.innerHTML += myCount + '<br>';
+        // }, 1000);
+        
+
+        /*----------------------------------------------*/    
+        //數字到停下來
+        let myCount = 0;
+
+        const fn = function () {
+            myCount++;
+            rect.innerHTML += myCount + '<br>';
+            if(myCount == 10){
+                clearInterval(iid);
+            }
+        }
+        fn();
+        let iid = setInterval(fn, 1000); //這裡的fn是參數
+
+       
+
+     
+    </script>
+</body>
+
+</html>

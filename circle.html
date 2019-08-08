@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Balls</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #c0e8ff;
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid gray;
+            background-color: red;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="rect">
+        <!-- <div class="ball">66</div> -->
+    </div>
+
+
+    <script>
+        let rect = document.querySelector('#rect');
+        let b, i, x, y;
+        let ballNum = 12; //圓形數量
+        let unitAng = Math.PI*2 / ballNum; //單位角度
+
+        for(i=0;i<ballNum;i++){
+            b= document.createElement('div');
+            b.className = "ball";
+            b.innerHTML = i+1;
+            x = 400 + Math.cos(unitAng*i-Math.PI/3)*250; //時鐘鐘面數字
+            y = 300 + Math.sin(unitAng*i-Math.PI/3)*250; //時鐘鐘面數字
+            b.style.left = x +'px';
+            b.style.top = y +'px';
+
+            rect.appendChild(b);
+        };
+
+        // const doRun = ()=>{
+        //   balls.forEach((el)=>{
+        //     let x = parseInt(b.style.left);
+        //     x += 2 + parseInt(Math.random()*4);
+        //     el.style.left =x +'px';
+        //   })  ;
+        //   setTimeout(doRun, 30);
+        // };
+
+        // doRun();
+    
+    </script>
+</body>
+</html>
