@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xhr</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    <div id="info"></div>
+    <button onclick="doAjax()">send</button>
+
+    <script>
+        const info = document.querySelector('#info');
+
+        function doAjax(){
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function (){
+                console.log(this.readyState, this.status);
+                if(this.readyState ===4 && this.status ===200){
+                    info.innerHTML = this.responseText;
+                }
+            }
+            xhr.open('GET', 'data/data01.txt', true);
+            xhr.send();
+        }
+    
+    </script>
+</body>
+</html>

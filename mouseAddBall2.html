@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mouseAddBall</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #c0e8ff;
+        }
+
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid gray;
+            background-color: red;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rect">
+  
+    </div>
+    <div id="info"></div>
+
+
+    <script>
+        const rect = document.querySelector('#rect');
+        const info = document.querySelector('#info');
+        let i, b, count = 0;
+
+        let mDown = function(event){
+            rect.addEventListener('mousemove', mMove );
+        }
+        let mUp = function(event){
+            rect.removeEventListener('mousemove', mMove);
+        }
+
+        let mMove = e => {
+            count += 2;
+            let c = count % 255;
+            b = document.createElement('div');
+            b.className = 'ball';
+            b.style.left = e.offsetX-20 + 'px';
+            b.style.top = e.offsetY-20 + 'px';
+            b.style.backgroundColor = `hsl(${parseInt(Math.random()*360)}, 100%, 50%)`;
+
+            rect.appendChild(b);
+        }
+
+        // rect.addEventListener('click', handler);
+        rect.addEventListener('mousedown', mDown);
+        rect.addEventListener('mouseup', mUp );
+
+    
+
+    </script>
+</body>
+
+</html>
